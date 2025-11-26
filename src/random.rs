@@ -19,7 +19,7 @@ const PRECISION: f32 = 100000000.;
 
 /// Generate a random number between 0 and 1 with more precision than `random()`.
 /// The result is a float with more decimal places.
-pub fn random_with_precision() -> f32 {
+pub fn random_more_precision() -> f32 {
     let random_u32 = getrandom::u32().unwrap();
     let result = (random_u32 as f32 % PRECISION) / PRECISION;
 
@@ -28,7 +28,7 @@ pub fn random_with_precision() -> f32 {
 
 #[test]
 fn test_random_with_precision() {
-    let random_number = random_with_precision();
+    let random_number = random_more_precision();
     println!("Random number: {}", random_number);
     assert!(random_number >= 0., "Random number is or is above 0.");
     assert!(random_number <= 1., "Random number is or is below 1.");
@@ -41,7 +41,7 @@ fn test_random_with_precision() {
 
 /// Generate a random number between min and max.
 pub fn random_from_range(min: f32, max: f32) -> f32 {
-    let random_seed = random_with_precision();
+    let random_seed = random_more_precision();
     let result = min + random_seed * (max - min);
 
     result

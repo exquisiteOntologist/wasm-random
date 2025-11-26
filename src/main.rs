@@ -7,7 +7,7 @@ fn main() {
     let random_not_precise = random::random();
     println!("inprecise random f32: {}", random_not_precise);
 
-    let random_precise = random::random_with_precision();
+    let random_precise = random::random_more_precision();
     println!("precise random f32: {}", random_precise);
 
     let random_range = random::random_from_range(100., 1720.);
