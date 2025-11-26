@@ -19,7 +19,7 @@ fn test_random() {
 /// The result is a float with more decimal places.
 pub fn random_with_precision() -> f32 {
     let random_u32 = getrandom::u32().unwrap();
-    let result = (random_u32 as f32 % 10000000.) / 10000000.;
+    let result = (random_u32 as f32 % 10000000000.) / 10000000000.;
 
     result
 }
