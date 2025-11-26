@@ -15,11 +15,13 @@ fn test_random() {
     assert!(random_number.is_finite(), "Random number is finite");
 }
 
+const PRECISION: f32 = 100000000.;
+
 /// Generate a random number between 0 and 1 with more precision than `random()`.
 /// The result is a float with more decimal places.
 pub fn random_with_precision() -> f32 {
     let random_u32 = getrandom::u32().unwrap();
-    let result = random_u32 as f32 / 10000000000.;
+    let result = (random_u32 as f32 % PRECISION) / PRECISION;
 
     result
 }
