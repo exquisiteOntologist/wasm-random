@@ -21,5 +21,5 @@ let random_number = wasm_random::random::random_more_precision()
 ```
 
 ```rust
-let random_nmber = wasm_random::random::random_from_range();
+let random_nmber = wasm_random::random::random_from_range(100., 300.);
 ```
