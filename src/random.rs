@@ -38,6 +38,8 @@ fn test_random_f64() {
 
 /// Generate a random number between min and max.
 pub fn random_from_range(min: f32, max: f32) -> f32 {
+    debug_assert!(min <= max);
+
     let random_seed = random();
     let result = min + random_seed * (max - min);
 
@@ -85,6 +87,8 @@ fn test_random_from_range_d() {
 
 /// Generate a random number between min and max.
 pub fn random_from_range_f64(min: f64, max: f64) -> f64 {
+    debug_assert!(min <= max);
+
     let random_seed = random_f64();
     let result = min + random_seed * (max - min);
 
