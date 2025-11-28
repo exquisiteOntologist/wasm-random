@@ -10,6 +10,13 @@ fn main() {
     let random_f32 = random::random();
     println!("random f32: {}", random_f32);
 
+    let random_check = random::random();
+    println!(
+        "random f32 check: {} & {}",
+        random_check,
+        random_check * 100000000.
+    );
+
     let random_f64 = random::random_f64();
     println!("random f64: {}", random_f64);
 
