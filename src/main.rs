@@ -25,4 +25,10 @@ fn main() {
 
     let random_range_b = random::random_from_range(0., 0.7);
     println!("random range b: {}", random_range_b);
+
+    let random_range_c = random::random_from_range_f64(0.0005, 0.0009);
+    println!("random range c: {}", random_range_c);
+
+    let random_range_d = random::random_from_range_f64(8000., 24000.);
+    println!("random range d: {}", random_range_d);
 }
