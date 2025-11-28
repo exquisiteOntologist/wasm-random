@@ -2,6 +2,14 @@
 name = "wasm-random"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+repository = "https://github.com/exquisiteOntologist/wasm-random"
+readme = "readme.md"
+description = """
+WASM-friendly random number generation.
+"""
+keywords = ["wasm", "random", "webassembly", "random-number"]
+categories = ["algorithms", "wasm"]
 
 [dependencies]
 getrandom = { version = "0.3.4", features = ["wasm_js"], default-features = false}
