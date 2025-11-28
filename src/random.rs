@@ -32,7 +32,7 @@ fn test_random_f64() {
     let random_number = random_f64();
     assert!(random_number >= 0.);
     assert!(random_number <= 1.);
-    assert!((random_number * PRECISION_F64 >= 1.));
+    assert!((random_number * PRECISION_F64) >= 1.);
     assert!(random_number.is_finite());
 }
 
@@ -80,5 +80,22 @@ fn test_random_from_range_d() {
     let random_number = random_from_range(min, max);
     assert!(random_number >= min);
     assert!(random_number <= max);
+    assert!(random_number.is_finite());
+}
+
+/// Generate a random number between min and max.
+pub fn random_from_range_f64(min: f64, max: f64) -> f64 {
+    let random_seed = random_f64();
+    let result = min + random_seed * (max - min);
+
+    result
+}
+
+#[test]
+fn test_random_from_range_f64_a() {
+    let random_number = random_from_range_f64(0., 1.);
+    assert!(random_number >= 0.);
+    assert!(random_number <= 1.);
+    assert!((random_number * 10. >= 0.) && (random_number * 10. <= 10.),);
     assert!(random_number.is_finite());
 }
