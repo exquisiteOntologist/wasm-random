@@ -10,6 +10,9 @@ WASM-friendly random number generation.
 """
 keywords = ["wasm", "random", "webassembly", "random-number"]
 categories = ["algorithms", "wasm"]
+include = [
+    "src/**/*.rs",
+]
 
 [dependencies]
 getrandom = { version = "0.3.4", features = ["wasm_js"], default-features = false}
