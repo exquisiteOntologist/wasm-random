@@ -4,7 +4,7 @@ Simple WebAssembly random number generator.
 
 ## Why
 
-A selection of random number libraries are available, however, almost none of those libraries are compatible with WASM. This library is designed to be simple and easy to use with WASM.
+A selection of random number libraries are available; however, few of those libraries are compatible with WASM. This library is designed to be simple and easy to use with WASM.
 
 ## Compatibility
 
