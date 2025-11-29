@@ -13,11 +13,11 @@ This library does not depend on any system-specific features, making it compatib
 ## Usage
 
 ```rust
-let random_number = wasm_random::random::random();
+let random_number = wasm_random::random();
 ```
 
 ```rust
-let random_number = wasm_random::random::random_from_range(100., 300.);
+let random_number = wasm_random::random_from_range(100., 300.);
 ```
 
 There are also `..._f64` variants of these functions (the default are `f32`).
