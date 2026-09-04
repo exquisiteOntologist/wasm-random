@@ -2,6 +2,8 @@ use std::ops::{Add, Mul, Range, Sub};
 
 use getrandom::Error;
 
+use crate::traits::Random;
+
 pub const PRECISION_F32: f32 = 100000000.;
 
 /// Generate a random number `f32` between `0.` and `1.`
@@ -37,6 +39,18 @@ pub fn range_f64(range: Range<f64>) -> Result<f64, Error> {
     debug_assert!(range.start <= range.end);
 
     let random_seed = f64()?;
+    let result = range.start + random_seed * (range.end - range.start);
+
+    Ok(result)
+}
+
+pub fn range<T>(range: Range<T>) -> Result<T, Error>
+where
+    T: Random + PartialOrd + Add<Output = T> + Sub<Output = T> + Mul<Output = T> + Copy,
+{
+    debug_assert!(range.start <= range.end);
+
+    let random_seed = T::random()?;
     let result = range.start + random_seed * (range.end - range.start);
 
     Ok(result)
