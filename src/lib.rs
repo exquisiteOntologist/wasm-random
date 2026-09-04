@@ -1,4 +1,4 @@
 pub mod random;
 pub use random::*;
-mod constants;
+pub mod constants;
 mod traits;

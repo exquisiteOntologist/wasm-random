@@ -1,4 +1,4 @@
-use wasm_random::{f32, f64, range_f32, range_f64};
+use wasm_random::{f32, f64, range};
 
 fn main() {
     let random_u32 = getrandom::u32().unwrap();
@@ -20,16 +20,16 @@ fn main() {
     let random_f64 = f64().unwrap();
     println!("random f64: {}", random_f64);
 
-    let random_range_a = range_f32((100.)..1720.).unwrap();
+    let random_range_a = range((100.)..1720.).unwrap();
     println!("random range a: {}", random_range_a);
 
-    let random_range_b = wasm_random::range_f32((0.)..0.7).unwrap();
+    let random_range_b = wasm_random::range((0.)..0.7).unwrap();
     println!("random range b: {}", random_range_b);
 
-    let random_range_c = range_f64((0.0005)..0.0009).unwrap();
+    let random_range_c = range((0.0005)..0.0009).unwrap();
     println!("random range c: {}", random_range_c);
 
-    let random_range_d = wasm_random::range_f64((8000.)..24000.).unwrap();
+    let random_range_d = wasm_random::range((8000.)..24000.).unwrap();
     println!("random range d: {}", random_range_d);
 
     let random_range_e = wasm_random::range_i64(8000..24000).unwrap();
