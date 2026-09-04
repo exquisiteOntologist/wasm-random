@@ -159,7 +159,7 @@ mod tests {
     #[test]
     fn test_random_from_range_exp_a() {
         let random_number = random_from_range_exp(0..10);
-        println!("exp_a {}", random_number);
+        // println!("exp_a {}", random_number);
         assert!(random_number >= 0);
         assert!(random_number <= 10);
     }
@@ -167,7 +167,7 @@ mod tests {
     #[test]
     fn test_random_from_range_exp_f64_a() {
         let random_number = random_from_range_exp_f64((0.)..10.);
-        println!("exp_f64_a {}", random_number);
+        // println!("exp_f64_a {}", random_number);
         assert!(random_number >= 0.);
         assert!(random_number <= 10.);
     }
