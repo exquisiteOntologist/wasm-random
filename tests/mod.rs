@@ -22,6 +22,42 @@ fn test_f64() {
 }
 
 #[test]
+fn test_i16() {
+    let random_number = random::i16().unwrap();
+    assert!(random_number > 0);
+}
+
+#[test]
+fn test_i32() {
+    let random_number = random::i32().unwrap();
+    assert!(random_number > 0);
+}
+
+#[test]
+fn test_i64() {
+    let random_number = random::i64().unwrap();
+    assert!(random_number > 0);
+}
+
+#[test]
+fn test_u16() {
+    let random_number = random::u16().unwrap();
+    assert!(random_number > 0);
+}
+
+#[test]
+fn test_u32() {
+    let random_number = random::u32().unwrap();
+    assert!(random_number > 0);
+}
+
+#[test]
+fn test_u64() {
+    let random_number = random::u64().unwrap();
+    assert!(random_number > 0);
+}
+
+#[test]
 fn test_generic_random() {
     let random_number = random::random::<f64>().unwrap();
     assert!(random_number >= 0.);
