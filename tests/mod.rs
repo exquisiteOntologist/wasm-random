@@ -86,7 +86,17 @@ fn test_range_f64_b() {
 
 #[test]
 fn test_range_i64() {
-    let random_number = random::range_i64(0..10).unwrap();
+    let min = 0 as i64;
+    let max = 10 as i64;
+    let random_number = random::range_i64(min..max).unwrap();
     assert!(random_number >= 0);
+    assert!(random_number <= 10);
+}
+
+#[test]
+fn test_range_u64() {
+    let min = 0 as u64;
+    let max = 10 as u64;
+    let random_number = random::range_u64(min..max).unwrap();
     assert!(random_number <= 10);
 }
