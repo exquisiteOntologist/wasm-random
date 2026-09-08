@@ -2,7 +2,7 @@ use std::ops::{Add, Mul, Range, Sub};
 
 use getrandom::Error;
 
-use crate::traits::Random;
+use crate::traits::{Float, Random};
 
 /// Generate a random number `f32` between `0.` and `1.`
 pub fn f32() -> Result<f32, Error> {
@@ -19,7 +19,9 @@ pub fn f64() -> Result<f64, Error> {
 /// # Examples
 ///
 /// ```
-/// random::<f64>()
+/// # fn main() -> Result<(), getrandom::Error> {
+/// wasm_random::random::<f64>()?;
+/// # Ok(()) }
 /// ```
 pub fn random<T>() -> Result<T, Error>
 where
@@ -33,11 +35,13 @@ where
 /// # Examples
 ///
 /// ```
-/// range((5.)..30.)
+/// # fn main() -> Result<(), getrandom::Error> {
+/// wasm_random::range((5.)..30.)?;
+/// # Ok(()) }
 /// ```
 pub fn range<T>(range: Range<T>) -> Result<T, Error>
 where
-    T: Random + PartialOrd + Add<Output = T> + Sub<Output = T> + Mul<Output = T> + Copy,
+    T: Float + Random + PartialOrd + Add<Output = T> + Sub<Output = T> + Mul<Output = T> + Copy,
 {
     debug_assert!(range.start <= range.end);
 

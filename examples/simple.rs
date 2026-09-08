@@ -33,5 +33,5 @@ fn main() {
     println!("random range d: {}", random_range_d);
 
     let random_range_e = wasm_random::range_i64(8000..24000).unwrap();
-    println!("random range d: {}", random_range_e);
+    println!("random range e: {}", random_range_e);
 }

@@ -4,10 +4,12 @@ use crate::constants::{PRECISION_F32, PRECISION_F64};
 
 /// Can generate random numbers
 pub trait Random: Sized {
+    /// Generate a random number
     fn random() -> Result<Self, Error>;
 }
 
 impl Random for f32 {
+    /// Generate a random number between 0 and 1
     fn random() -> Result<Self, Error> {
         let random_u32 = getrandom::u32()?;
         let result = (random_u32 as f32 % PRECISION_F32) / PRECISION_F32;
@@ -17,6 +19,7 @@ impl Random for f32 {
 }
 
 impl Random for f64 {
+    /// Generate a random number between 0 and 1
     fn random() -> Result<Self, Error> {
         let random_u64 = getrandom::u64()?;
         let result = (random_u64 as f64 % PRECISION_F64) / PRECISION_F64;
@@ -24,3 +27,25 @@ impl Random for f64 {
         Ok(result)
     }
 }
+
+impl Random for u32 {
+    /// Generate a random number.
+    /// Note: Not between 0 and 1.
+    fn random() -> Result<Self, Error> {
+        getrandom::u32()
+    }
+}
+
+impl Random for u64 {
+    /// Generate a random number.
+    /// Note: Not between 0 and 1.
+    fn random() -> Result<Self, Error> {
+        getrandom::u64()
+    }
+}
+
+/// Floating-point numbers
+pub trait Float {}
+
+impl Float for f32 {}
+impl Float for f64 {}
