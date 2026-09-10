@@ -121,18 +121,51 @@ fn test_range_f64_b() {
 }
 
 #[test]
-fn test_range_i64() {
-    let min = 0 as i64;
-    let max = 10 as i64;
+fn test_range_i16() {
+    let min = 0 as i16;
+    let max = i16::MAX as i16;
     let random_number = random::range_all(min..max).unwrap();
-    assert!(random_number >= 0);
-    assert!(random_number <= 10);
+    assert!(random_number >= min);
+    assert!(random_number <= max);
+    assert!(min != max);
+}
+
+#[test]
+fn test_range_i32() {
+    let min = i16::MAX as i32;
+    let max = i32::MAX as i32;
+    let random_number = random::range_all(min..max).unwrap();
+    assert!(random_number >= min);
+    assert!(random_number <= max);
+    assert!(min != max);
+}
+
+#[test]
+fn test_range_i64() {
+    let min = i32::MAX as i64;
+    let max = i64::MAX as i64;
+    let random_number = random::range_all(min..max).unwrap();
+    assert!(random_number >= min);
+    assert!(random_number <= max);
+    assert!(min != max);
+}
+
+#[test]
+fn test_range_u32() {
+    let min = 0 as u32;
+    let max = u32::MAX as u32;
+    let random_number = random::range_all(min..max).unwrap();
+    assert!(random_number >= min);
+    assert!(random_number <= max);
+    assert!(min != max);
 }
 
 #[test]
 fn test_range_u64() {
-    let min = 0 as u64;
-    let max = 10 as u64;
+    let min = u32::MAX as u64;
+    let max = u64::MAX as u64;
     let random_number = random::range_all(min..max).unwrap();
-    assert!(random_number <= 10);
+    assert!(random_number >= min);
+    assert!(random_number <= max);
+    assert!(min != max);
 }
