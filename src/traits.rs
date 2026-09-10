@@ -30,6 +30,7 @@ impl Random for f64 {
 
 impl Random for i16 {
     /// Generate a random number.
+    ///
     /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok((getrandom::u32()? as i16).abs())
@@ -38,6 +39,7 @@ impl Random for i16 {
 
 impl Random for i32 {
     /// Generate a random number.
+    ///
     /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok((getrandom::u32()? as i32).abs())
@@ -46,6 +48,7 @@ impl Random for i32 {
 
 impl Random for i64 {
     /// Generate a random number.
+    ///
     /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok((getrandom::u64()? as i64).abs())
@@ -62,6 +65,7 @@ impl Random for i64 {
 
 impl Random for u16 {
     /// Generate a random number.
+    ///
     /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok(getrandom::u32()? as u16)
@@ -70,6 +74,7 @@ impl Random for u16 {
 
 impl Random for u32 {
     /// Generate a random number.
+    ///
     /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         getrandom::u32()
@@ -78,6 +83,7 @@ impl Random for u32 {
 
 impl Random for u64 {
     /// Generate a random number.
+    ///
     /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         getrandom::u64()

@@ -6,7 +6,7 @@ use num::cast::AsPrimitive;
 use crate::traits::{Float, Random};
 
 /// Generate a random number of input type.
-/// Floats return a random number between `0.` and `1.` (a fraction),
+/// Floats return a random number between `0.` and `1.` (decimal),
 /// other number types create random numbers between `0`
 /// and their maximum possible values.
 ///
