@@ -53,6 +53,6 @@ fn main() {
     let random_range_e = random::range_all(8000..24000).unwrap();
     println!("random range e: {}", random_range_e);
 
-    let random_range_f = random::range_all(8000..24000).unwrap();
+    let random_range_f = random::range_all(i32::MIN..i32::MAX).unwrap();
     println!("random range f: {}", random_range_f);
 }

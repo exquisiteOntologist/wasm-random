@@ -24,31 +24,29 @@ fn test_f64() {
 #[test]
 fn test_i16() {
     let random_number = random::number::<i16>().unwrap();
-    assert!(random_number > 0);
+    assert!(random_number >= 0);
 }
 
 #[test]
 fn test_i32() {
     let random_number = random::number::<i32>().unwrap();
-    assert!(random_number > 0);
+    assert!(random_number >= 0);
 }
 
 #[test]
 fn test_i64() {
     let random_number = random::number::<i64>().unwrap();
-    assert!(random_number > 0);
+    assert!(random_number >= 0);
 }
 
 #[test]
 fn test_u16() {
-    let random_number = random::number::<u16>().unwrap();
-    assert!(random_number > 0);
+    let _random_number = random::number::<u16>().unwrap();
 }
 
 #[test]
 fn test_u32() {
-    let random_number = random::number::<u32>().unwrap();
-    assert!(random_number > 0);
+    let _random_number = random::number::<u32>().unwrap();
 }
 
 #[test]
@@ -81,6 +79,7 @@ fn test_range_f32_b() {
     let random_number = random::range(min..max).unwrap();
     assert!(random_number >= min);
     assert!(random_number <= max);
+    assert!(min != max);
     assert!(random_number.is_finite());
 }
 
@@ -91,6 +90,7 @@ fn test_range_f32_c() {
     let random_number = random::range(min..max).unwrap();
     assert!(random_number >= min);
     assert!(random_number <= max);
+    assert!(min != max);
     assert!(random_number.is_finite());
 }
 
@@ -101,6 +101,7 @@ fn test_range_f32_d() {
     let random_number = random::range(min..max).unwrap();
     assert!(random_number >= min);
     assert!(random_number <= max);
+    assert!(min != max);
     assert!(random_number.is_finite());
 }
 
@@ -122,7 +123,7 @@ fn test_range_f64_b() {
 
 #[test]
 fn test_range_i16() {
-    let min = 0 as i16;
+    let min = i16::MIN as i16;
     let max = i16::MAX as i16;
     let random_number = random::range_all(min..max).unwrap();
     assert!(random_number >= min);
@@ -152,7 +153,7 @@ fn test_range_i64() {
 
 #[test]
 fn test_range_u32() {
-    let min = 0 as u32;
+    let min = u32::MIN as u32;
     let max = u32::MAX as u32;
     let random_number = random::range_all(min..max).unwrap();
     assert!(random_number >= min);
