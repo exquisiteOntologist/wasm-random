@@ -21,13 +21,13 @@ let random_number = wasm_random::number::<u64>();
 ### Random in Range for Floats
 
 ```rust
-let random_number = wasm_random::range(100., 300.);
+let random_number = wasm_random::range((100.)..300.);
 ```
 
 ### Random in Range for All Numeric Types
 
 ```rust
-let random_number = wasm_random::range_all(130, 1500);
+let random_number = wasm_random::range_all(130..1500);
 ```
 
 See the examples or read the source for further details.
