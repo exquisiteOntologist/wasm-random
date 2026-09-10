@@ -12,12 +12,22 @@ This library does not depend on any system-specific features, making it compatib
 
 ## Usage
 
-```rust
-let random_number = wasm_random::random();
-```
+### Random Numbers
 
 ```rust
-let random_number = wasm_random::random_from_range(100., 300.);
+let random_number = wasm_random::number::<u64>();
 ```
 
-There are also `..._f64` variants of these functions (the default are `f32`).
+### Random in Range for Floats
+
+```rust
+let random_number = wasm_random::range(100., 300.);
+```
+
+### Random in Range for All Numeric Types
+
+```rust
+let random_number = wasm_random::range_all(130, 1500);
+```
+
+See the examples or read the source for further details.

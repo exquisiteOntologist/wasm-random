@@ -9,7 +9,7 @@ pub trait Random: Sized {
 }
 
 impl Random for f32 {
-    /// Generate a random number between 0. and 1.
+    /// Generate a random number between `0.` and `1.`
     fn random() -> Result<Self, Error> {
         let random_u32 = getrandom::u32()?;
         let result = (random_u32 as f32 % PRECISION_F32) / PRECISION_F32;
@@ -19,7 +19,7 @@ impl Random for f32 {
 }
 
 impl Random for f64 {
-    /// Generate a random number between 0. and 1.
+    /// Generate a random number between `0.` and `1.`
     fn random() -> Result<Self, Error> {
         let random_u64 = getrandom::u64()?;
         let result = (random_u64 as f64 % PRECISION_F64) / PRECISION_F64;
@@ -30,7 +30,8 @@ impl Random for f64 {
 
 impl Random for i16 {
     /// Generate a random number.
-    /// **Note:** Not between 0 and 1.
+    ///
+    /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok((getrandom::u32()? as i16).abs())
     }
@@ -38,7 +39,8 @@ impl Random for i16 {
 
 impl Random for i32 {
     /// Generate a random number.
-    /// **Note:** Not between 0 and 1.
+    ///
+    /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok((getrandom::u32()? as i32).abs())
     }
@@ -46,7 +48,8 @@ impl Random for i32 {
 
 impl Random for i64 {
     /// Generate a random number.
-    /// **Note:** Not between 0 and 1.
+    ///
+    /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok((getrandom::u64()? as i64).abs())
     }
@@ -62,7 +65,8 @@ impl Random for i64 {
 
 impl Random for u16 {
     /// Generate a random number.
-    /// **Note:** Not between 0 and 1.
+    ///
+    /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         Ok(getrandom::u32()? as u16)
     }
@@ -70,7 +74,8 @@ impl Random for u16 {
 
 impl Random for u32 {
     /// Generate a random number.
-    /// **Note:** Not between 0 and 1.
+    ///
+    /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         getrandom::u32()
     }
@@ -78,7 +83,8 @@ impl Random for u32 {
 
 impl Random for u64 {
     /// Generate a random number.
-    /// **Note:** Not between 0 and 1.
+    ///
+    /// **Note:** Not between `0` and `1`.
     fn random() -> Result<Self, Error> {
         getrandom::u64()
     }
@@ -97,10 +103,3 @@ pub trait Float {}
 
 impl Float for f32 {}
 impl Float for f64 {}
-
-// Can't implement for primitives
-// impl Into<f64> for f32 {
-//     fn into(v: f32) {
-//         v as f64
-//     }
-// }
